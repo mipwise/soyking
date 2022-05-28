@@ -1,44 +1,25 @@
-# The SoyKing use case
+# The SoyKing problem
 
 *Author:* Andrea Rujano
 
 May, 2022.
 
-Welcome to the SoyKing problem, a transportation problem. The study and resolution of this problem is part of the mip-go training program. In the section below is the description of the problem.
+Welcome to the SoyKing repository. The development of the solution to this problem was part of my training in the [Mip Go][Mip Go] programa at [Mip wise][Mip Wise].
 
-## Description of the problem
+## Useful links
+Problem's introductory statement: https://www.mipwise.com/use-cases/soyking
 
-*SoyKing* is a major soybean producer in Brazil. The company currently
-has two distribution centers (DC) with demand for many tons of soybean 
-and three farms with tons of soybean ready to be shipped.
+Mathematical formulation: [docs]
 
-The tables below contain all the relevant data.
+Implementation: [scripts]
 
-* `supplies`
-
-|  Farm ID  |  Availability (tons)  |
-|:---------:|:---------------------:|
-|    F1     |          16           |
-|    F2     |          11           |
-|    F3     |          23           |
-
-* `demands`
-
-| DC ID | Demand (tons) |
-|:-----:|:-------------:|
-|  D1   |      20       |
-|  D2   |      25       |
-
-* `costs`
-
-|  Farm ID  | DC ID | Cost per Ton |
-|:---------:|:-----:|:------------:|
-|    F1     |  D1   |      66      |
-|    F2     |  D1   |      51      |
-|    F3     |  D1   |      73      |
-|    F1     |  D2   |      54      |
-|    F2     |  D2   |      82      |
-|    F3     |  D2   |      63      |
+Testing: [test soyking]
 
 
-What is the most cost-efficient way to ship the soy from the farms to the distribution centers?
+[Mip Go]: https://www.mipwise.com/mip-go
+[Mip Wise]: https://www.mipwise.com/
+[statement link]: https://www.mipwise.com/use-cases/soyking
+[mip hub]: https://www.mipwise.com/mip-hub
+[docs]: docs/
+[scripts]: soyking/
+[test soyking]: test_soyking/
