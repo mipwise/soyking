@@ -4,7 +4,7 @@
 
 May, 2022.
 
-Welcome to the SoyKing repository. The development of the solution to this problem was part of my training in the [Mip Go][Mip Go] programa at [Mip wise][Mip Wise].
+Welcome to the SoyKing repository. The development of the solution to this problem was part of my training in the [Mip Go][Mip Go] program at [Mip wise][Mip Wise].
 
 ## Useful links
 Problem's introductory statement: https://www.mipwise.com/use-cases/soyking
