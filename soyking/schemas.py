@@ -8,9 +8,9 @@ from ticdat import PanDatFactory
 input_schema = PanDatFactory(
     # syntax: table_name=[['Primary Key One', 'Primary Key Two'], ['Data Field One', 'Data Field Two']]
     parameters=[['Name'], ['Value']],
-    supplies=[['Farm ID'], ['Availability']],
+    suppliers=[['Farm ID'], ['Availability']],
     demands=[['DC ID'], ['Demand']],
-    shipping_costs=[['Farm ID', 'DC ID'], ['Cost per ton']])
+    shipping_costs=[['Farm ID', 'DC ID'], ['Cost Per Ton']])
 # endregion
 
 # region USER PARAMETERS
@@ -20,12 +20,12 @@ input_schema.add_parameter('Shipping Cost Multiplier', default_value=1.5, number
 
 # region OUTPUT SCHEMA
 output_schema = PanDatFactory(
-    ship_flow=[['Farm ID', 'DC ID'], ['Shipped tons']])
+    ship_flow=[['Farm ID', 'DC ID'], ['Shipped Tons']])
 # endregion
 
 # region DATA TYPES AND PREDICATES - INPUT SCHEMA
-# region supplies
-table = 'supplies'
+# region suppliers
+table = 'suppliers'
 input_schema.set_data_type(table=table, field='Farm ID', number_allowed=False, strings_allowed='*')
 input_schema.set_data_type(table=table, field='Availability', number_allowed=True, strings_allowed=(),
                            min=0, inclusive_min=True, max=float('inf'), inclusive_max=False)
@@ -42,7 +42,7 @@ for field in ['Farm ID', 'DC ID']:
     input_schema.set_data_type(table=table, field=field, number_allowed=False, strings_allowed='*')
 input_schema.set_data_type(table=table, field='Cost per ton', number_allowed=True, strings_allowed=(),
                            min=0, inclusive_min=True, max=float('inf'), inclusive_max=False)
-input_schema.add_foreign_key(native_table='shipping_costs', foreign_table='supplies',
+input_schema.add_foreign_key(native_table='shipping_costs', foreign_table='suppliers',
                              mappings=('Farm ID', 'Farm ID'))
 input_schema.add_foreign_key(native_table='shipping_costs', foreign_table='demands',
                              mappings=('DC ID', 'DC ID'))
@@ -54,7 +54,7 @@ input_schema.add_foreign_key(native_table='shipping_costs', foreign_table='deman
 table = 'ship_flow'
 output_schema.set_data_type(table=table, field='Farm ID', number_allowed=False, strings_allowed='*')
 output_schema.set_data_type(table=table, field='DC ID', number_allowed=False, strings_allowed='*')
-output_schema.set_data_type(table=table, field='Shipped tons', number_allowed=True, strings_allowed=(),
+output_schema.set_data_type(table=table, field='Shipped Tons', number_allowed=True, strings_allowed=(),
                             min=0, inclusive_min=True, max=float('inf'), inclusive_max=False)
 # endregion
 
