@@ -8,11 +8,11 @@ import pandas as pd
 def solve(dat):
     # Prepare optimization parameters
     sc = dat.shipping_costs
-    I = list(dat.supplies['Farm ID'])
+    I = list(dat.suppliers['Farm ID'])
     J = list(dat.demands['DC ID'])
-    av = dict(zip(dat.supplies['Farm ID'], dat.supplies['Availability']))
+    av = dict(zip(dat.suppliers['Farm ID'], dat.suppliers['Availability']))
     dm = dict(zip(dat.demands['DC ID'],dat.demands['Demand']))
-    costs = dict(zip(zip(sc['Farm ID'], sc['DC ID']), sc['Cost per ton']))
+    costs = dict(zip(zip(sc['Farm ID'], sc['DC ID']), sc['Cost Per Ton']))
     x_keys = [(i, j) for i in I for j in J]
 
     # Build optimization model
@@ -40,11 +40,11 @@ def solve(dat):
     # Populate output schema
     sln = output_schema.PanDat()
     if x_sol:
-        ship_flow_df = pd.DataFrame(x_sol, columns=['Farm ID', 'DC ID', 'Shipped tons'])
+        ship_flow_df = pd.DataFrame(x_sol, columns=['Farm ID', 'DC ID', 'Shipped Tons'])
         # populate ship_flow table
-        ship_flow_df = ship_flow_df.round({'Cost per ton': 2})
-        ship_flow_df = ship_flow_df.astype({'Farm ID': str, 'DC ID': str, 'Shipped tons': 'Float64'})
-        sln.ship_flow = ship_flow_df[['Farm ID', 'DC ID', 'Shipped tons']]
+        ship_flow_df = ship_flow_df.round({'Cost Per Ton': 2})
+        ship_flow_df = ship_flow_df.astype({'Farm ID': str, 'DC ID': str, 'Shipped Tons': 'Float64'})
+        sln.ship_flow = ship_flow_df[['Farm ID', 'DC ID', 'Shipped Tons']]
     return sln
 
 
