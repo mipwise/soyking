@@ -1,4 +1,4 @@
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from soyking.schemas import input_schema, output_schema
 from soyking.action_update_shipping_cost import update_shipping_cost
