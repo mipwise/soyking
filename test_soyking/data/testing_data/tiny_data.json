@@ -1,0 +1,97 @@
+{
+  "suppliers": {
+    "columns": [
+      "Farm ID",
+      "Availability"
+    ],
+    "data": [
+      [
+        "F1",
+        16
+      ],
+      [
+        "F2",
+        11
+      ],
+      [
+        "F3",
+        23
+      ]
+    ]
+  },
+  "parameters": {
+    "columns": [
+      "Name",
+      "Value"
+    ],
+    "data": [
+      [
+        "Shipping Cost Multiplier",
+        "1.5"
+      ],
+      [
+        "Time Limit",
+        "120.0"
+      ],
+      [
+        "MIP Gap",
+        "0.01"
+      ]
+    ]
+  },
+  "shipping_costs": {
+    "columns": [
+      "Farm ID",
+      "DC ID",
+      "Cost Per Ton"
+    ],
+    "data": [
+      [
+        "F1",
+        "D1",
+        66
+      ],
+      [
+        "F2",
+        "D1",
+        51
+      ],
+      [
+        "F3",
+        "D1",
+        73
+      ],
+      [
+        "F1",
+        "D2",
+        54
+      ],
+      [
+        "F2",
+        "D2",
+        82
+      ],
+      [
+        "F3",
+        "D2",
+        63
+      ]
+    ]
+  },
+  "demands": {
+    "columns": [
+      "DC ID",
+      "Demand"
+    ],
+    "data": [
+      [
+        "D1",
+        20
+      ],
+      [
+        "D2",
+        25
+      ]
+    ]
+  }
+}
